@@ -67,3 +67,6 @@ RESPONSE_511 = {
     RESPONSE: 511,
     DATA: None
 }
+
+IMG = 'server/img'
+EXIT_IMG = f'{IMG}/exit.png'

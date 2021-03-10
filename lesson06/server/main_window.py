@@ -1,7 +1,8 @@
-
 from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QApplication, QLabel, QTableView
-from PyQt5.QtGui import QStandardItemModel, QStandardItem
+from PyQt5.QtGui import QStandardItemModel, QStandardItem, QIcon
 from PyQt5.QtCore import QTimer
+
+from common.variables import EXIT_IMG
 from server.stat_window import StatWindow
 from server.config_window import ConfigWindow
 from server.add_user import RegisterUser
@@ -9,7 +10,7 @@ from server.remove_user import DelUserDialog
 
 
 class MainWindow(QMainWindow):
-    '''Класс - основное окно сервера.'''
+    """Класс - основное окно сервера."""
 
     def __init__(self, database, server, config):
         # Конструктор предка
@@ -22,7 +23,8 @@ class MainWindow(QMainWindow):
         self.config = config
 
         # Ярлык выхода
-        self.exitAction = QAction('Выход', self)
+        # self.exitAction = QAction('Выход', self)
+        self.exitAction = QAction(QIcon(EXIT_IMG), 'Exit/Выход', self)
         self.exitAction.setShortcut('Ctrl+Q')
         self.exitAction.triggered.connect(qApp.quit)
 
@@ -63,11 +65,13 @@ class MainWindow(QMainWindow):
         # Надпись о том, что ниже список подключённых клиентов
         self.label = QLabel('Список подключённых клиентов:', self)
         self.label.setFixedSize(240, 15)
-        self.label.move(10, 25)
+        # self.label.move(10, 25)
+        self.label.move(17, 38)
 
         # Окно со списком подключённых клиентов.
         self.active_clients_table = QTableView(self)
-        self.active_clients_table.move(10, 45)
+        # self.active_clients_table.move(10, 45)
+        self.active_clients_table.move(10, 58)
         self.active_clients_table.setFixedSize(780, 400)
 
         # Таймер, обновляющий список клиентов 1 раз в секунду
@@ -86,7 +90,7 @@ class MainWindow(QMainWindow):
         self.show()
 
     def create_users_model(self):
-        '''Метод заполняющий таблицу активных пользователей.'''
+        """Метод заполняющий таблицу активных пользователей."""
         list_users = self.database.active_users_list()
         list = QStandardItemModel()
         list.setHorizontalHeaderLabels(
@@ -109,25 +113,25 @@ class MainWindow(QMainWindow):
         self.active_clients_table.resizeRowsToContents()
 
     def show_statistics(self):
-        '''Метод создающий окно со статистикой клиентов.'''
+        """Метод создающий окно со статистикой клиентов."""
         global stat_window
         stat_window = StatWindow(self.database)
         stat_window.show()
 
     def server_config(self):
-        '''Метод создающий окно с настройками сервера.'''
+        """Метод создающий окно с настройками сервера."""
         global config_window
         # Создаём окно и заносим в него текущие параметры
         config_window = ConfigWindow(self.config)
 
     def reg_user(self):
-        '''Метод создающий окно регистрации пользователя.'''
+        """Метод создающий окно регистрации пользователя."""
         global reg_window
         reg_window = RegisterUser(self.database, self.server_thread)
         reg_window.show()
 
     def rem_user(self):
-        '''Метод создающий окно удаления пользователя.'''
+        """Метод создающий окно удаления пользователя."""
         global rem_window
         rem_window = DelUserDialog(self.database, self.server_thread)
         rem_window.show()

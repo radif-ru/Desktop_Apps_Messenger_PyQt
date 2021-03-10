@@ -58,7 +58,7 @@ class MainWindow(QMainWindow):
     def initUI(self):
         # Кнопка выхода
         # exitAction = QAction('Выход', self)
-        exitAction = QAction(QIcon('exit.png'), 'Exit/Выход', self)
+        exitAction = QAction(QIcon('server/img/exit.png'), 'Exit/Выход', self)
         exitAction.setShortcut('Ctrl+Q')
         exitAction.triggered.connect(qApp.quit)
 
