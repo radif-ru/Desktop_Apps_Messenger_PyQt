@@ -16,7 +16,7 @@ from decos import log
 from errors import ReqFieldMissingError, ServerError, IncorrectDataReceivedError
 
 from logs.configs.config_client_log import LOGGER as CLIENT_LOGGER  # Инициализация клиентского логера
-from metaclasses import ClientMaker
+from common.metaclasses import ClientMaker
 from my_testing_codes.old_files.client_database import ClientDatabase
 
 # Объект блокировки сокета и работы с базой данных
