@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Another one messenger's documentation!
-=================================================
+Добро пожаловать в документацию Моего Мессенджера!
+==================================================
 
 .. toctree::
    :maxdepth: 3
