@@ -12,7 +12,8 @@ setup(
         "build_exe": build_exe_options
     },
     executables=[Executable('client.py',
+                            # Чтобы убрать консоль, разкоментировать строку:
                             # base='Win32GUI',
-                            targetName='server.exe',
+                            targetName='client.exe',
                             )]
 )
