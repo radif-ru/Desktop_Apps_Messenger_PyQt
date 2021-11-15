@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>unit_tests package &#8212; документация My messenger beta 0.9</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="unit-tests-package">
+<h1>unit_tests package<a class="headerlink" href="#unit-tests-package" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Ссылка на этот заголовок">¶</a></h2>
+</div>
+<div class="section" id="unit-tests-test-client-module">
+<h2>unit_tests.test_client module<a class="headerlink" href="#unit-tests-test-client-module" title="Ссылка на этот заголовок">¶</a></h2>
+</div>
+<div class="section" id="unit-tests-test-server-module">
+<h2>unit_tests.test_server module<a class="headerlink" href="#unit-tests-test-server-module" title="Ссылка на этот заголовок">¶</a></h2>
+</div>
+<div class="section" id="module-unit_tests.test_utils">
+<span id="unit-tests-test-utils-module"></span><h2>unit_tests.test_utils module<a class="headerlink" href="#module-unit_tests.test_utils" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Unit-тесты утилит</p>
+<dl class="py class">
+<dt id="unit_tests.test_utils.TestSocket">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">unit_tests.test_utils.</span></code><code class="sig-name descname"><span class="pre">TestSocket</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unit_tests.test_utils.TestSocket" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</div></blockquote>
+<p>Тестовый класс для тестирования отправки и получения,
+при создании требует словарь, который будет прогонятся
+через тестовую функцию</p>
+<dl class="py method">
+<dt id="unit_tests.test_utils.TestSocket.recv">
+<code class="sig-name descname"><span class="pre">recv</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_len</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unit_tests.test_utils.TestSocket.recv" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Получаем данные из сокета
+:param max_len:
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="unit_tests.test_utils.TestSocket.send">
+<code class="sig-name descname"><span class="pre">send</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message_to_send</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unit_tests.test_utils.TestSocket.send" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Тестовая функция отправки, корретно  кодирует сообщение,
+так-же сохраняет что должно было отправлено в сокет.
+message_to_send - то, что отправляем в сокет
+:param message_to_send:
+:return:</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="unit_tests.test_utils.Tests">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">unit_tests.test_utils.</span></code><code class="sig-name descname"><span class="pre">Tests</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unit_tests.test_utils.Tests" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+</div></blockquote>
+<p>Тестовый класс, собственно выполняющий тестирование.</p>
+<dl class="py attribute">
+<dt id="unit_tests.test_utils.Tests.test_dict_recv_err">
+<code class="sig-name descname"><span class="pre">test_dict_recv_err</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{'error':</span> <span class="pre">'Bad</span> <span class="pre">Request',</span> <span class="pre">'response':</span> <span class="pre">400}</span></em><a class="headerlink" href="#unit_tests.test_utils.Tests.test_dict_recv_err" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="unit_tests.test_utils.Tests.test_dict_recv_ok">
+<code class="sig-name descname"><span class="pre">test_dict_recv_ok</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{'response':</span> <span class="pre">200}</span></em><a class="headerlink" href="#unit_tests.test_utils.Tests.test_dict_recv_ok" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="unit_tests.test_utils.Tests.test_dict_send">
+<code class="sig-name descname"><span class="pre">test_dict_send</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{'action':</span> <span class="pre">'presence',</span> <span class="pre">'time':</span> <span class="pre">111111.111111,</span> <span class="pre">'user':</span> <span class="pre">{'account_name':</span> <span class="pre">'test_test'}}</span></em><a class="headerlink" href="#unit_tests.test_utils.Tests.test_dict_send" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="unit_tests.test_utils.Tests.test_get_message">
+<code class="sig-name descname"><span class="pre">test_get_message</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unit_tests.test_utils.Tests.test_get_message" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Тест функции приёма сообщения
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="unit_tests.test_utils.Tests.test_send_message">
+<code class="sig-name descname"><span class="pre">test_send_message</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unit_tests.test_utils.Tests.test_send_message" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Тестируем корректность работы фукции отправки,
+создадим тестовый сокет и проверим корректность отправки словаря
+:return:</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-unit_tests">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-unit_tests" title="Ссылка на этот заголовок">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">My messenger</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../launcher.html">Launcher module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common.html">Common package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs.html">Logs package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client.html">Client module documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server.html">Server module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Radif.ru.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/__sphinx-apidoc_rst_files/unit_tests.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
